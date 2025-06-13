@@ -65,9 +65,9 @@ int main(int argc, char* argv[]) {
     std::string full_cmd;
 
     if (is_shift_pressed() && !root.empty()) {
-        full_cmd = "cmd /c \"\"" + nvim_path + "\" --listen " + socket + " \"+" + line + "\" \"+cd \"" + root + "\"\" " + file + "\"";
+        full_cmd = "cmd /c \"\"" + nvim_path + "\" --listen " + socket + " \"+" + line + "\" \"+cd \"" + root + "\"\" \"" + file + "\"\"";
     } else {
-        full_cmd = "cmd /c \"\"" + nvim_path + "\" --listen " + socket + " \"+" + line + "\" " + file + "\"";
+        full_cmd = "cmd /c \"\"" + nvim_path + "\" --listen " + socket + " \"+" + line + "\" \"" + file + "\"\"";
     }
     
     system(full_cmd.c_str());
